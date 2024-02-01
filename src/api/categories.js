@@ -10,4 +10,4 @@ export const getSingleCategories = async (id) => {
     const response = await instance.get(`api/categories/${id}/`);
   
     return response.data
-  }
+}
