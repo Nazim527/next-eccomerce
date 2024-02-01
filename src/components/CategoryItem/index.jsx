@@ -55,27 +55,30 @@ const CategoryItems = ({ image, count, title, price, description, id }) => {
       <div className="category_item" onClick={openModal}>
         <div className="item_header">
           <img src={image} />
+        </div>
+
+        <div className="item_footer">
           <div className="item_title">
             <h5>{title}</h5>
             <p>{count} pc</p>
           </div>
-        </div>
-
-        <div className="item_footer">
-          <p>{price}$</p>
-          <button
-            className={`add_card ${isButtonClicked ? "clicked" : ""}`}
-            onClick={handleBtn}
-          >
-            {isButtonClicked ? (
-              <ImCheckmark />
-            ) : (
-              <>
-                <PiShoppingCartBold className="icon" />
-                Card
-              </>
-            )}
-          </button>
+          
+          <div className="item_add-card">
+            <p>{price}$</p>
+            <button
+              className={`add_card ${isButtonClicked ? "clicked" : ""}`}
+              onClick={handleBtn}
+            >
+              {isButtonClicked ? (
+                <ImCheckmark />
+              ) : (
+                <>
+                  <PiShoppingCartBold className="icon" />
+                  Card
+                </>
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
