@@ -9,7 +9,7 @@ import { addToCArt } from "@/lib/features/basketSlice";
 
 import { ImCheckmark } from "react-icons/im";
 
-const CategoryItems = ({ image, count, title, price, description, id }) => {
+const CategoryItems = ({ image, count, title, price, description, id,unit }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isButtonClicked, setIsButtonClicked] = useState(false);
 
@@ -60,7 +60,7 @@ const CategoryItems = ({ image, count, title, price, description, id }) => {
         <div className="item_footer">
           <div className="item_title">
             <h5>{title}</h5>
-            <p>{count} pc</p>
+            <p>{count} {unit}</p>
           </div>
           
           <div className="item_add-card">

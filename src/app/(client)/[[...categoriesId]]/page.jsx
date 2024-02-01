@@ -18,6 +18,7 @@ const Categories = ({ params: { categoriesId } }) => {
           title={product.title}
           count={product.amount_by_unit}
           price={product.price}
+          unit={product.unit}
         />
       ))}
     </div>

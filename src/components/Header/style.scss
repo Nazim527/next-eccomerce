@@ -3,7 +3,8 @@
 
 .header {
     @include flex(space-between,center);
-    padding: 35px 0;
+    padding: 35px 50px;
+    background-color: map-get($colors, white );
 
     .left_header {
         width: 109px;

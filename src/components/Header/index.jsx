@@ -8,7 +8,7 @@ import "./style.scss";
 
 const Header = () => {
   return (
-    <header className="header">
+    <header className="header fluid">
       <div className="left_header">
         <Image src="/assets/icon/Logo.svg" width={10} height={50} alt="Logo" />
       </div>
