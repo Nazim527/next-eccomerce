@@ -4,7 +4,7 @@ import { Providers } from "@/lib/StoreProvider";
 import { Header } from "@/components";
 import { AdminAllCategories } from "@/components/admin";
 
-import './style.scss'
+import './layout.scss'
 
 const inter = Inter({ subsets: ["latin"] });
 
