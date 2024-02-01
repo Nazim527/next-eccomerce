@@ -10,7 +10,7 @@ export function usePagesProducts(categoryId=2) {
         const data = await fetchCategoryData(categoryId);
         setPagesProducts(data);
       } catch (error) {
-        console.error("Pages API de xeta bas verdi!", error);
+        console.error("API de xeta bas verdi!", error);
       } 
     }
 
