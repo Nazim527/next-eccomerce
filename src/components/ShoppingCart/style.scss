@@ -1,0 +1,102 @@
+@import "../../helpers/map";
+@import "../../helpers/mixin";
+
+.shopping_basket {
+  position: fixed;
+  cursor: pointer;
+  right: 0;
+  border-radius: 6px 0 0 6px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 21px 36px 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: map-get($colors, primary);
+  padding: 10px;
+  transition: all 0.9s ease-in-out;
+
+  @include flex_colum(15px);
+
+  .basket_header {
+    gap: 7px;
+    @include flex(center, center);
+    @include size_color(white, PD1-15, FW_R);
+
+    .icon {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  .basket_footer {
+    button {
+      height: 35px;
+      min-width: 80px;
+      background-color: map-get($colors, white);
+      border-radius: 5px;
+      outline: none;
+      border: none;
+
+      @include flex(center, center);
+      @include size_color(primary, PD1-15, FW_H);
+    }
+  }
+}
+
+.shopping_basket-overlay {
+  .shopping_basket-modal {
+    position: fixed;
+    top: 0;
+    right: -340px;
+    width: 440px;
+    height: 100%;
+    background-color: #fff;
+    z-index: 11111111111;
+    box-shadow: -5px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 2s ease-in-out;
+
+    &.open {
+      right: 0;
+    }
+
+    .header_modal-basket {
+      padding: 16px 27px;
+      border-bottom: 1px solid rgb(197, 189, 189);
+
+      @include flex(space-between, center);
+
+      .total_basket-item {
+        @include size_color(primary, PD1-15, FW_H);
+        @include flex_row(7px);
+        align-items: center;
+        p {
+          transform: translateY(2px);
+        }
+
+        .icon {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .footer_modal-basket {
+      margin-top: 50px;
+      @include flex(center, center);
+      flex-direction: column;
+      gap: 30px;
+
+      svg {
+        width: 140px;
+        height: 176px;
+        color: map-get($colors, primary);
+      }
+
+      p {
+        @include size_color(black_1, PD1-15, FW_R);
+      }
+    }
+
+    //! Items 
+    .footer_modal-basket_items {
+        // padding: 15px 0;
+    }
+  }
+}

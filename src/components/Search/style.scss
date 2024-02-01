@@ -1,0 +1,48 @@
+@import '../../helpers/map';
+@import '../../helpers/mixin';
+
+.search_production {
+    background-image: url("../../assets/images/main.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom;
+    height: 90vh;
+
+    @include flex(center,center);
+    flex-direction: column;
+    gap: 15px;
+
+    h2 {
+        @include size_color(black, EH1-45, FW_H)
+    }
+    
+    p {
+        @include size_color(lGrey, EH2-19, FW_R);
+        margin-bottom: 45px;
+    }
+    
+    .search_input {
+        width: 700px;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 21px 36px 0px;
+        display: flex;
+
+        input {
+            height: 100%;
+            border: none; outline: none;
+            padding-left: 30px;
+            border-radius: 8px 0 0 8px;
+            flex: 1;
+        }
+
+        button {
+            padding: 15px 30px;
+            background-color: map-get($colors, primary);
+            border: none; outline: none;
+            border-radius: 0 8px 8px 0;
+
+            @include flex($align: center);
+            @include size_color(white,PD1-15,FW_R);
+            gap: 5px;
+        }
+    }
+}

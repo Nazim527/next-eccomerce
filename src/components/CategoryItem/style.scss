@@ -1,0 +1,114 @@
+@import "../../helpers/map";
+@import "../../helpers/mixin";
+
+.category_item {
+  padding: 30px;
+  padding-top: 0;
+  height: fit-content;
+  cursor: pointer;
+  @include flex_colum(32px);
+  background-color: map-get($colors, white);
+  border-radius: 8px;
+
+  .item_header {
+    @include flex_colum(15px);
+
+    img {
+      width: 248px;
+      height: auto;
+      margin: 0 auto;
+    }
+
+    .item_title {
+      @include flex_colum(11px);
+      h2 {
+        @include size_color(black, PD1-15, FW_M);
+      }
+      p {
+        @include size_color(lGrey, PD2-13, FW_R);
+      }
+    }
+  }
+
+  .item_footer {
+    @include flex(space-between, center);
+
+    & > p {
+      @include size_color(primary, PD1-15, FW_H);
+    }
+
+    button {
+      border: 2px solid rgb(237, 236, 236);
+      padding: 12px 19px;
+      border-radius: 18px;
+      outline: none;
+      transition: all 0.3s;
+      cursor: pointer;
+      background-color: map-get($colors, white);
+
+      @include size_color(primary, PD1-15, FW_R);
+      @include flex($align: center);
+      gap: 8px;
+
+      &:hover {
+        color: map-get($colors, white);
+        background-color: map-get($colors, primary);
+      }
+    }
+  }
+}
+
+//! Modal items
+.items_modal { 
+  width: 65%;
+  display: flex;
+  gap: 60px;
+  padding: 32px 50px;
+  padding-left: 25px;
+
+  .modal_left {
+    img {
+      width: 390px;
+      height: auto;
+    }
+  }
+
+  .modal_right {
+    margin-top: 28px;
+    @include flex_colum(32px);
+
+    .right_header {
+      @include flex_colum(11px);
+      h2 {
+        @include size_color(black, PD1-15, FW_M);
+      }
+      p {
+        @include size_color(lGrey, PD2-13, FW_R);
+      }
+    }
+
+    .right_center {
+      @include flex_colum(30px);
+      p {
+        @include size_color(black_1, PD1-15, FW_R);
+        line-height: 30px;
+      }
+
+      .item_detail {
+        @include flex_row(8px);
+
+        button {
+          padding: 8px 15px;
+          background-color: rgb(247, 247, 247);
+          border-radius: 8px;
+          border: 1px solid rgb(237, 236, 236);
+          @include size_color(black, PD2-13, FW_R);
+        }
+      }
+    }
+
+    .right_footer p {
+        @include size_color(primary, PD1-15, FW_H);
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@import '../helpers/map';
+@import '../helpers/mixin';
+
+.AllCategories_section {
+    width: 100%;
+    display: flex;
+    height: fit-content;
+    gap: 30px;
+}

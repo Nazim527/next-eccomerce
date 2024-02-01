@@ -1,0 +1,32 @@
+$colors: (
+    primary: #009e7f,
+
+    black: #0d1136,
+    black_1: #424561,
+
+    lGrey: #77798c,
+
+    white: #FFF
+);
+
+$fonts: (
+    //! for Desktop
+    EH1-45: 45px,
+    EH2-19: 19px,   
+
+    //! for Ipad/Mobile
+    H1-34: 34px,
+    H2-17: 17px,
+
+    //? FW-Header
+    FW_H: 700,
+    FW_M: 600,
+    FW_R: 400,
+    
+    //! Paragraphs
+    PD1-15: 15px,
+    PD2-13: 13px,
+    
+    PM1-14: 14px,
+    PM2-12: 12px,
+)

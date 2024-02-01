@@ -1,0 +1,57 @@
+@import "../../helpers/map";
+@import "../../helpers/mixin";
+
+.shopping_cart-item {
+    @include flex(space-between,center);
+    height: 100%;
+    padding: 15px 25px;
+    border-bottom: 1px solid rgb(197, 189, 189);
+
+    .left_shopping_cart-item {
+        height: fit-content;
+        @include flex($align: center);
+        gap: 5px;
+
+        .quantity_item {
+            padding: 10px;
+            border-radius: 200px;
+            background-color: rgba(241, 239, 239, 0.676);
+
+            @include flex_colum(9px);
+            align-items: center;
+
+            .icon {
+                cursor: pointer;
+            }
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .item_info {
+            height: 100%;
+            @include flex_colum(10px);
+
+            h5 {
+                @include size_color(black, PD1-15, FW_H);
+            }
+            .price {
+                @include size_color(primary, PD1-15, FW_R);
+            }
+            p {
+                @include size_color(lGrey, PD2-13, FW_R);
+            }
+        }
+    }
+
+    .right_shopping_cart-item {
+        @include flex_row(7px);
+        align-items: center;
+
+        p {
+            @include size_color(black, PD1-15, FW_H);
+        }
+    }
+}
