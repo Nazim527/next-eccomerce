@@ -1,0 +1,25 @@
+@import "../../../helpers/map";
+@import "../../../helpers/mixin";
+
+.category {
+    padding: 10px 0;
+    cursor: pointer;
+    transition: all 0.3s;
+    
+    @include flex(space-between,center);
+    @include size_color(black,PD1-15,FW_M);
+    .admin-category_name {
+        @include flex($align:center);
+        gap: 15px;
+
+        svg{
+            transform: translateY(-1px);
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    &:hover {
+        color: map-get($colors,primary);
+    }
+}

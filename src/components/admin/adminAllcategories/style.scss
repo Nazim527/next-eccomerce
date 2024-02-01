@@ -1,0 +1,12 @@
+@import "../../../helpers/map";
+@import "../../../helpers/mixin";
+
+.admin_categories {
+  width: 260px;
+  min-width: 260px;
+  height: 100%;
+  padding: 50px 25px 0 50px;
+  background-color: white;
+
+  @include flex_colum(10px);
+}
