@@ -1,0 +1,27 @@
+@import "../../../helpers/map";
+@import "../../../helpers/mixin";
+
+.auth_login {
+  @include flex_colum();
+  align-items: center;
+
+  .login_header {
+    @include flex_colum(15px);
+    align-items: center;
+    img {
+      width: 170px;
+      height: auto;
+    }
+  }
+
+  .login_footer {
+    width: 100%;
+    margin-bottom: 30px;
+    .login_input {
+        margin: 20px 0;
+        @include flex_colum(12px);
+    }
+  }
+
+  
+}

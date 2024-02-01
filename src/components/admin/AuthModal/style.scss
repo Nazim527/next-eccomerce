@@ -1,0 +1,58 @@
+@import "../../../helpers/map";
+@import "../../../helpers/mixin";
+
+.auth_modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f1f1f1;
+
+  @include flex(center, center);
+  .auth_content {
+    width: 320px;
+    padding: 50px;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  //! Auth global
+  h4 {
+    @include size_color(black_2, EH2-19, FW_R);
+  }
+  label {
+    @include size_color(black_2, PD1-15, FW_H);
+  }
+  input {
+    background-color: #f6f6f6;
+    @include size_color(black_1, PD2-13, FW_M);
+    padding: 13px;
+    border: none;
+    outline: none;
+  }
+
+  button {
+    width: 100%;
+    cursor: pointer;
+    background-color: map-get($colors, primary);
+    padding: 15px 0;
+    border: none;
+    outline: none;
+
+    @include size_color(white, PD1-15, FW_M);
+    border-radius: 10px;
+  }
+
+  .direction {
+    @include size_color(lGrey, PD2-13, FW_R);
+
+    a {
+      margin-left: 3px;
+      color: map-get($colors, primary);
+      font-weight: 600;
+    }
+  }
+
+  .regError {
+    @include size_color(error, PD2-13,FW_M);
+    align-self: flex-end;
+  }
+}
