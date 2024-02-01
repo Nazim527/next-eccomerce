@@ -2,26 +2,33 @@
 @import "../../helpers/map";
 
 .header {
-    @include flex(space-between,center);
-    padding: 35px 50px;
-    background-color: map-get($colors, white );
+  @include flex(space-between, center);
+  padding: 35px 50px;
+  background-color: map-get($colors, white);
+  position: sticky;
+  top: 0;
+  transition: top .3s;
 
-    .left_header {
-        width: 109px;
-        height: 18px;
+  &.visible {
+    top: -95px;
+  }
+
+  .left_header {
+    width: 109px;
+    height: 18px;
+  }
+
+  .right_header {
+    @include flex(space-between, center);
+    gap: 15px;
+
+    a {
+      @include size_color(black, PD2-13, FW_H);
     }
 
-    .right_header {
-        @include flex(space-between,center);
-        gap: 15px;
-
-        a {
-            @include size_color(black, PD2-13,FW_H)
-        }
-        
-        &:nth-child(2) a {
-            @include flex($align: center);
-            gap: 5px;
-        }
+    &:nth-child(2) a {
+      @include flex($align: center);
+      gap: 5px;
     }
+  }
 }
