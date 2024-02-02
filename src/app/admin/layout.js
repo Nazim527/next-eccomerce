@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "@/helpers/reset.scss";
 import { Providers } from "@/lib/StoreProvider";
 import '../../helpers/reset.scss'
+import { ToastContainer } from "react-toastify";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,6 +17,7 @@ export default function RootLayout({ children } ) {
       <body className={`${inter.className} container`} style={{height:"100vh", overflow: "hidden"}}>
         <Providers>
           {children}
+          <ToastContainer/>
         </Providers>
       </body>
     </html>
