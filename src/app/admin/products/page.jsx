@@ -3,11 +3,20 @@ import { useAllProducts } from '@/hooks/AllProducts'
 import React from 'react'
 import { AdminCategoryitem } from '@/components/admin'
 import './products.scss'
+import { useSelector } from 'react-redux'
+import { useRouter } from 'next/navigation'
 
 
 const Products = () => {
   const dataProducts = useAllProducts()
-  console.log(dataProducts.products);
+  const router = useRouter()
+
+  //Controlled auth
+  const {logToken} = useSelector((state) => state.auth)
+
+  if(logToken == "") {
+    router.push("/admin/register")
+  }
   return (
     <div className='products_items'>
       {dataProducts?.products?.map((product) => (
