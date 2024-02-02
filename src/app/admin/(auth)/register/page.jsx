@@ -72,7 +72,7 @@ const Register = () => {
               type="text"
               id="username"
               name="username"
-              placeholder="Ex: demo@demo.com"
+              placeholder="Ex: demo_Demo"
             />
             {errors?.username && (
               <div className="regError">{errors.username.message}</div>
@@ -106,7 +106,7 @@ const Register = () => {
               type="password"
               id="password"
               name="password"
-              placeholder="Ex: demo"
+              placeholder="Ex: Demo1234"
               {...register("password", {
                 required: "password cannot be blank",
                 pattern: {

@@ -3,13 +3,13 @@ body {
   font-family: 'Poppins', Arial, sans-serif;
   background-color: #f7f7f7;
 
-  &.admin_total {
-    height: 100vh;
-  }
-  &.admin_page {
-    height:100vh;
-    overflow: hidden;
-  }
+}
+.admin_total {
+  height: 100vh;
+}
+.admin_page {
+  height:100vh;
+  overflow: hidden;
 }
 
 html,

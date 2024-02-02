@@ -17,6 +17,7 @@
   //! Auth global
   h4 {
     @include size_color(black_2, EH2-19, FW_R);
+    margin: 0 !important;
   }
   label {
     @include size_color(black_2, PD1-15, FW_H);

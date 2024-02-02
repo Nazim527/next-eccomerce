@@ -13,7 +13,7 @@ export const metadata = {
 export default function RootLayout({ children } ) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`} style={{height:"100vh", overflow: "hidden"}}>
+      <body className={`${inter.className} container`}>
         <Providers>
           {children}
         </Providers>

@@ -6,7 +6,7 @@
   align-items: center;
 
   .login_header {
-    @include flex_colum(15px);
+    @include flex_colum(8px);
     align-items: center;
     img {
       width: 170px;
@@ -16,9 +16,9 @@
 
   .login_footer {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     .login_input {
-        margin: 20px 0;
+        margin: 10px 0;
         @include flex_colum(12px);
     }
   }

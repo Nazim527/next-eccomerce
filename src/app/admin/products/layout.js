@@ -15,11 +15,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body
-        className={`${inter.className}`}
-        style={{ height: "100vh" }}
-      >
+      <div className="container fluid admin_page admin_total">
         <Providers>
           <Header />
           <main className="all_Products fluid">
@@ -27,7 +23,6 @@ export default function RootLayout({ children }) {
             {children}
           </main>
         </Providers>
-      </body>
-    </html>
+      </div>
   );
 }
