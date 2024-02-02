@@ -1,23 +1,51 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { AuthModal } from "@/components/admin";
 import Image from "next/image";
 import Logo from "../../../../assets/icon/Logo.svg";
 import Link from "next/link";
+import { Bounce, ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import "../loginRegister.scss";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAuthRegister } from "@/lib/action/authThunk";
+import { useRouter } from "next/navigation";
 const Register = () => {
+  const dispatch = useDispatch();
+  const router = useRouter();
   const {
     register,
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm({ mode: "onChange" });
+  } = useForm({ mode: "onSubmit" });
 
   const onSubmit = (data) => {
-    console.log("Form Data:", data);
+    dispatch(fetchAuthRegister(data));
   };
+
+  //! User register controlled
+  const regSuccess = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (regSuccess.status === "Error") {
+      toast.error("An account already exists with this email address. Please log in", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+        transition: Bounce,
+      });
+    } else if (regSuccess.status === "Success") {
+      router.push(`/admin/login`);
+    }
+  }, [regSuccess]);
 
   return (
     <AuthModal contentClasname={"auth_login"}>
@@ -28,22 +56,22 @@ const Register = () => {
 
       <form className="login_footer" onSubmit={handleSubmit(onSubmit)}>
         <div className="login_input">
-          <label htmlFor="userName">Username</label>
+          <label htmlFor="username">Username</label>
           <input
-            {...register("userName", {
+            {...register("username", {
               required: "username cannot be blank",
               pattern: {
-                value: /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i,
+                value: /^[a-z0-9_-]{3,15}$/i,
                 message: "Invalid username. Please enter a valid username",
               },
             })}
             type="text"
-            id="userName"
-            name="userName"
+            id="username"
+            name="username"
             placeholder="Ex: demo@demo.com"
           />
-          {errors?.userName && (
-            <div className="regError">{errors.userName.message}</div>
+          {errors?.username && (
+            <div className="regError">{errors.username.message}</div>
           )}
         </div>
 
@@ -62,7 +90,7 @@ const Register = () => {
             name="email"
             placeholder="Ex: demo@demo.com"
           />
-          {errors?.userName && (
+          {errors?.email && (
             <div className="regError">{errors.email.message}</div>
           )}
         </div>
