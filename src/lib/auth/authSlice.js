@@ -1,5 +1,5 @@
 import {createSlice} from "@reduxjs/toolkit"
-import { fetchAuthRegister } from "../action/authThunk"
+import { fetchAuthLogin, fetchAuthRegister } from "../action/authThunk"
 
 const initialState = {
     logToken: "",
@@ -35,19 +35,19 @@ export const authReducer = createSlice({
             state.error = action.payload
         })
 
-        //!Login Reducer
-        // builder.addCase(fetchAuthLogin.pending,  (state) => {
-        //     state.status = "Loading"
-        // })
-        // builder.addCase(fetchAuthLogin.fulfilled, (state,action) => {
-        //     state.logToken = action.payload.jwt
-        //     state.logUserDatas = action.payload.user
-        //     state.status = "Success"
-        // })
-        // builder.addCase(fetchAuthLogin.rejected, (state,action) => {
-        //     state.status = "Error",
-        //     state.error = action.payload
-        // })
+        // !Login Reducer
+        builder.addCase(fetchAuthLogin.pending,  (state) => {
+            state.status = "Loading"
+        })
+        builder.addCase(fetchAuthLogin.fulfilled, (state,action) => {
+            state.logToken = action.payload.token
+            state.logUserDatas = action.payload
+            state.status = "Success"
+        })
+        builder.addCase(fetchAuthLogin.rejected, (state,action) => {
+            state.status = "Error",
+            state.error = action.payload
+        })
     }
 })
 

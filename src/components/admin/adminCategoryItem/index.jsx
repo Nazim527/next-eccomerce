@@ -1,10 +1,12 @@
+"use client";
 import React from "react";
+import '../../CategoryItem/style.scss'
 
 const AdminCategoryItem = ({ image, count, title, price,unit }) => {
   return (
     <div className="category_item">
       <div className="item_header">
-        <img src={image} />
+        <img src={image} alt="logo"/>
       </div>
 
       <div className="item_footer">

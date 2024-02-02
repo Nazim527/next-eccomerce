@@ -1,3 +1,4 @@
+import { login } from "@/api/auth/login";
 import { register } from "@/api/auth/register"
 import {createAsyncThunk} from "@reduxjs/toolkit"
 
@@ -17,16 +18,16 @@ export const fetchAuthRegister = createAsyncThunk(
     } 
 )
 
-// //! Login auth
-// export const fetchAuthLogin = createAsyncThunk(
-//     "auth/fetchAuthLogin",
-//     async ({data, Logtoken}, {rejectWithValue}) => {
-//         try {
-//             const result = await login(data, Logtoken)
+//! Login auth
+export const fetchAuthLogin = createAsyncThunk(
+    "auth/fetchAuthLogin",
+    async (data, {rejectWithValue}) => {
+        try {
+            const result = await login(data)
 
-//             return result
-//         } catch (error) {
-//             return rejectWithValue("Daxil Loginde olarken xeta bas verdi!")
-//         }
-//     } 
-// )
+            return result
+        } catch (error) {
+            return rejectWithValue("Daxil Loginde olarken xeta bas verdi!")
+        }
+    } 
+)

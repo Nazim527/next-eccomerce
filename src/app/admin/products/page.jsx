@@ -10,7 +10,7 @@ const Products = () => {
   console.log(dataProducts.products);
   return (
     <div className='products_items'>
-      {dataProducts.products?.map((product) => (
+      {dataProducts?.products?.map((product) => (
         <AdminCategoryitem 
         image={product.main_image} 
         title={product.title}
