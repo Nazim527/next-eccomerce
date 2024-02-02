@@ -44,10 +44,12 @@
   .direction {
     @include size_color(lGrey, PD2-13, FW_R);
 
-    a {
+    a,span {
       margin-left: 3px;
       color: map-get($colors, primary);
       font-weight: 600;
+      text-decoration: underline;
+      cursor: pointer;
     }
   }
 

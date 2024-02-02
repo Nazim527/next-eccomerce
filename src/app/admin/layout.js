@@ -2,7 +2,6 @@ import { Inter } from "next/font/google";
 import "@/helpers/reset.scss";
 import { Providers } from "@/lib/StoreProvider";
 import '../../helpers/reset.scss'
-import { ToastContainer } from "react-toastify";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -14,10 +13,9 @@ export const metadata = {
 export default function RootLayout({ children } ) {
   return (
     <html lang="en">
-      <body className={`${inter.className} container`} style={{height:"100vh", overflow: "hidden"}}>
+      <body className={`${inter.className}`} style={{height:"100vh", overflow: "hidden"}}>
         <Providers>
           {children}
-          <ToastContainer/>
         </Providers>
       </body>
     </html>
