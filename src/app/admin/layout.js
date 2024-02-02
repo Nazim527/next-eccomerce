@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "@/helpers/reset.scss";
 import { Providers } from "@/lib/StoreProvider";
 import '../../helpers/reset.scss'
+import Head from "../Head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +14,7 @@ export const metadata = {
 export default function RootLayout({ children } ) {
   return (
     <html lang="en">
+      <Head/>
       <body className={`${inter.className} container`}>
         <Providers>
           {children}
